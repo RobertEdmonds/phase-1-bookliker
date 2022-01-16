@@ -24,8 +24,11 @@ function displayBooks(books){
         newLike.className = 'newLike'
         newLike.textContent = 'Bob'      
         if(btn.textContent === 'Like'){
+            let me = {"id": 11,
+            "username": "Bob"}
             btn.textContent = 'Unlike'
             ulist.appendChild(newLike)
+            Object.assign(ulist, me)
         }else if(btn.textContent === 'Unlike'){
             btn.textContent = 'Like'
             document.querySelector('.newLike').remove()
