@@ -26,9 +26,9 @@ function displayBooks(books){
         if(btn.textContent === 'Like'){
             let me = {"id": 11,
             "username": "Bob"}
+            books.users += me 
             btn.textContent = 'Unlike'
-            ulist.appendChild(newLike)
-            Object.assign(ulist, me)
+            
         }else if(btn.textContent === 'Unlike'){
             btn.textContent = 'Like'
             document.querySelector('.newLike').remove()
@@ -55,7 +55,7 @@ function updateUser(book){
         headers:{
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(book.users)
+        body: JSON.stringify(book)
     })
     .then(resp => resp.json())
     .then(book => console.log(book))
